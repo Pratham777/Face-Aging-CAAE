@@ -121,8 +121,8 @@ class FaceAging(object):
 
         # ************************************* loss functions *******************************************************
         # loss function of encoder + generator
-        #self.EG_loss = tf.nn.l2_loss(self.input_image - self.G) / self.size_batch  # L2 loss
-        self.EG_loss = tf.reduce_mean(tf.abs(self.input_image - self.G))  # L1 loss
+        self.EG_loss = tf.nn.l2_loss(self.input_image - self.G) / self.size_batch  # L2 loss
+        #self.EG_loss = tf.reduce_mean(tf.abs(self.input_image - self.G))  # L1 loss
 
         # loss function of discriminator on z
         self.D_z_loss_prior = tf.reduce_mean(
